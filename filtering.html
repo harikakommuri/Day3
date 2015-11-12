@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>filtering</title>
+  <style>
+  tr
+    {
+      padding: 3;
+    }
+  td
+    {
+      padding: 3;
+      text-align: center;
+    }
+  </style>
+</head>
+<body style="background:#eee">
+  <div style="margin-top:100px;margin-left:auto;margin-right:auto;width:450px;height:400px;background:#b0e0e6;border-radius:1%">
+  <table id="t" border="2" width="100%" cellpadding="6">
+    <caption>EMPLOYEE DATA</caption>
+    <thead>
+      <tr>
+        <td>Name</td>
+        <td>Salary</td>
+        <td>DOJ</td>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>harika</td>
+      <td>12345</td>
+      <td>5-11-2015</td>
+    </tr>
+    <tr>
+      <td>sri</td>
+      <td>20000</td>
+      <td>7-4-14</td>
+    </tr>
+    <tr>
+      <td>sai</td>
+      <td>30000</td>
+      <td>1-10-2015</td>
+    </tr>
+    <tr>
+      <td>John</td>
+      <td>20000</td>
+      <td>9-7-2013</td>
+    </tr>
+    <tr>
+      <td>Leo</td>
+      <td>25000</td>
+      <td>4-3-2014</td>
+    </tr>
+  </tbody>
+</table><br>
+  <lable>Enter keyword</lable>
+  <input type="text" id="search" style="height:25px"><br><br>
+<center><button onclick="search()" style="height:35px">search</button></center>
+</div>
+  <script>
+  function search()
+  {
+    var tableid=document.getElementById("t");
+    var element=document.getElementById("search");
+    for(var i=1;i<tableid.rows.length;i++)
+    {
+      var f=0;
+      for(var j=0;j<tableid.rows[i].cells.length;j++)
+      {
+        if(element.value==tableid.rows[i].cells[j].innerHTML)
+        {
+          f=1;
+          break;
+        }
+      }
+      if(f==1)
+        //tableid.rows[i].style.display="table-row";windows.alert
+        tableid.rows[i].style.background="#c0c0c0";
+     else
+     {
+      tableid.rows[i].style.background="#b0e0e6";
+     }
+    }
+    document.getElementById("search").value="";
+  }
+
+  /*function reset()
+  {
+    var tableid=document.getElementById("t");
+    document.write(this.html);
+  }*/
+  </script>
+</body>
+</html>
