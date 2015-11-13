@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <title>insert a row dynamically</title>
+</head>
+<body>
+  <div style="margin:0 auto;width:350px;background:#efe2c3">
+  <table id="t"  cellpadding="10" style="border:3;background:#eee;width:100%">
+    <lable><h2>Name</h2></lable><input type="text" style="height:25px;width:300px" id="name"><br>
+    <lable><h2>Salary</h2></lable><input type="text" style="height:25px;width:300px" id="salary"><br>
+    <lable><h2>DOJ</h2></lable><input type="text" style="height:25px;width:300px" id="doj"><br>
+      <button onclick="insertrow()">insert row</button>
+    <thead style="cursor:pointer;background:#e0e0e0">
+      <th onclick="alert()">Name</th>
+      <th>salary</th>
+      <th>DOJ</th>
+    </thead>
+    <tbody id="tbody">
+    </tbody>
+  </table>
+</div>
+  <script>
+  function insertrow()
+  {
+    var tableid=document.getElementById("t");
+    var tbody=document.getElementById("tbody");
+    var cell1=document.getElementById("name");
+    var cell2=document.getElementById("salary");
+    var cell3=document.getElementById("doj");
+    var tr=document.createElement("tr");
+    var td1=document.createElement("td");
+    var td2=document.createElement("td");
+    var td3=document.createElement("td");
+    td1.innerHTML=cell1.value;
+    td2.innerHTML=cell2.value;
+    td3.innerHTML=cell3.value;
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+    tr.appendChild(td3);
+    tbody.appendChild(tr);
+  }
+  </script>
+</body>
+</html>
